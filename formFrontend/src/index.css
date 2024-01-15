@@ -1,0 +1,9 @@
+body {
+  background-image: url("./assets/2206_w030_n003_399b_p1_399.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
+}
