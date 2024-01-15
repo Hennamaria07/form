@@ -21,6 +21,8 @@ const dummyUsers = [
       }
 
 ]
+
+// SignUp
 exports.SignUp = async (req, res) => {
     const {fullname, email, number, password} = req.body;
 try {
@@ -44,6 +46,7 @@ try {
 }
 }
 
+// Login
 exports.Login = async (req, res) => {
     const {email, password} = req.body;
     const user = dummyUsers.find((user) => user.email === email);
