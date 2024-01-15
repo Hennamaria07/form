@@ -50,15 +50,15 @@ exports.Login = async (req, res) => {
     console.log('user :', user);
     try {
         if(!user) {
-            return res.status(404).json({
+            return res.status(401).json({
                 success: false,
                 message: "user not found"
             });
         }
         const isValid = await bcrypt.compare(password, user.hashedPass);
-        console.log(`isvalid: ${isValid}`);
+        // console.log(`isvalid: ${isValid}`);
         if(!isValid) {
-            return res.status(401).json({
+            return res.status(404).json({
                 success: false,
                 message: 'Invalid credentials!'
             });

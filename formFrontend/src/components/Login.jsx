@@ -26,12 +26,12 @@ const Login = () => {
         if (form.checkValidity() === false) {
             event.stopPropagation();
         } else {
-            const res = await axios.post("http://localhost:4123/login", {
-                email,
-                password
-            });
             try {
-                if(res.data.sucess){
+                const res = await axios.post("http://localhost:4123/login", {
+                    email,
+                    password
+                });
+                if (res.data.success) {
                     toast.success(res.data.message, {
                         position: "top-center",
                         autoClose: 3000,
@@ -41,8 +41,8 @@ const Login = () => {
                         draggable: true,
                         progress: undefined,
                         theme: "dark",
-                        });
-                }
+                    });
+                } 
             } catch (error) {
                 toast.error(error.message, {
                     position: "top-center",
@@ -53,12 +53,13 @@ const Login = () => {
                     draggable: true,
                     progress: undefined,
                     theme: "dark",
-                    });
+                });
             }
         }
-
+    
         setValidated(true);
     };
+    
 
     return (
         <Container as={Col} lg="5" md="8" className='d-flex justify-content-center align-items-center' style={containerStyle}>
